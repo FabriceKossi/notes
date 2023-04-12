@@ -253,3 +253,8 @@ La syntaxe est simple: Kubectl verbe objet.
 Le names pace Est un niveaux d'abstraction supplémentaire. Il nous permets d'assigner nos pods, services cluster etc.. A un env
 Kubens petit outils permettant de changer facilement de namespace
 Pas mal d'outils permettant de rendre l'expérience Kubernetes plus facile d'utilisation. On commence on au début avec Kubectl mais on fini vite par utiliser tout ces éléments qui facilitent la vie
+
+
+Dans une bdd de type yaml on peut créer des objets de type speaker
+
+On modifie une ressource, on transmet la commande au controller et celui ci l'applique
