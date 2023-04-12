@@ -21,7 +21,7 @@ Terraform Ansible.
 Point de départ :compte AWS, un domaine acheté chez Gandi
 
 Crash course
-====infra as code
+==== infra as code
 1. Provisioning d'infra (hardware) . Il me faut des serveurs pour pouvoir host mon infra (serveurs, réseau etc... Provisioning d'knfra->cloud provider permettende monter des serveur plus facilement 
 2.Configuration management installatiln du socle technique qui va nous permettre de faire tourner mon appli. management
 3orchestration d'application. Faire tourner les appli, gérer le cycle de vie de l'app, gestio'
@@ -29,12 +29,12 @@ L'infra as code c'est faire tout ça ensemble
 
 IaC c'est faire sous forme de code 
 
-====Gitops
+==== Gitops
 L'iaC comme d'écrire précédemment te représente ton truc à un temps t
 Mais faut le versionner.
 Gitops c'est d'avoir une source de vérité Git, dans lequel je mets mon code d'infra que je vais pouvoir synchroniser à un instant t par rapport à ce qui est déployé
 
-====De docker à Kubernetes
+==== De docker à Kubernetes
 Ce qu'on produit en tant que dev c'est un artefact, le runtime c'est ce qui va permettre de faire tourner l'art
 Le problème est que souvent c'est les équipe ops qui mettent en place le runtime alors que c'est les devs qui l'utilisent.
 Donc dans l'idée un truc cool serait que les dev gèrent le runtime et c'est ça que permets docker. Le dev gère son environnement technique grâce à des container. 
@@ -45,7 +45,7 @@ On a besoin d'un chef d'orchestre pour gérer tout ça que docker compose permet
 Un docker compose sur un seul serveur ça passe. Plusisuer docker compose sur 1 serveur ca devient galère. Plusieurs sur plusieurs serveur ça devient impossible docker compose sert pas à ça.
 L'orchestrator par défaut pour gérer tout ça maintenant c'est Kubernetes
 
-====Kubernetes
+==== Kubernetes
 Ça rend facile le management d'application (photo) 
 
 Point archi:d'un côté les worker nodes qui font tourner les container de l'autre les master nodes qui font la gestion
@@ -68,19 +68,19 @@ Si on veut publier sur internet on va plutôt utiliser **l'ingress** c'est un re
 Contrairement aux autre ressources l'ingress marche pas comme par défaut.
 Le **namespace** espace de nommage regroupant toutes les ressources lié à un projet.
 
-===Episode 1 déployer infra
-====EKS
+=== Episode 1 déployer infra
+==== EKS
 Eks c'est le Kubernetes managé propose par AWS d'amazone
 Particularité d'eks
 AZ=avaibility zone= centre réseau entier pour aws
-====terraform
+==== terraform
 
 Solution d'automation de l'infra et de providing des resources cloud.
 
-====GitlabCicd
+==== GitlabCicd
 Solution de choix pour le déploiement
 
-Architecture:
+==== Architecture:
 Un dossier sur gitlab. Repo Terraform qu'on ça déployer chez Aws
 
 Code Terraform des fichiers en. Tf.
@@ -98,7 +98,7 @@ Mais fichier três três verbeux Donc Il est plus simple de définir aussi des v
 
 Les modules permettent de recouper tout ça.
 
-===cycle de vie.
+=== cycle de vie.
 Terraform init pour initialiser tout ça.
 Le plan va resynchro notre app avec le Tfstate.
 L'apply fait le déploiement et défait le tfstate
