@@ -103,3 +103,21 @@ Terraform init pour initialiser tout ça.
 Le plan va resynchro notre app avec le Tfstate.
 L'apply fait le déploiement et défait le tfstate
 Le destroy permet de tout effacer
+
+=== Ansible :plate-forme pour configurer et manager des plate-forme
+Controle node pour manager Ansible et ses modules. 
+Inventaire permet de lister les machines notamment. Mais on va a plus l'utiliser pour lister où doivent être deployé les éléments 
+
+Un playbook est une procédure d'install technique c'est ce que l'on d'exploit. 
+Et on le déploie sur l'inventaire 
+
+Ansible utilise aussi des modules et on peut remarque que comme Terraform on peut déclarer l'état attendu. 
+
+
+
+
+
+
+
+
+
