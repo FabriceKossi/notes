@@ -1,0 +1,70 @@
+= Devoxx France 2023
+:imagesdir: ./images
+:toc:
+
+== Mercredi
+
+=== Une Architecture GitOps from scratch : Gitlab, Ansible, Terraform, Kubernetes et AWS
+
+.Speakers : Loïc Ortola et Aurélien Moreau (@Takima)
+
+Infra complete en GitOps:
+C'est quoi une infra complete? archi 3 tier
+
+Stack appli:front en angular, Api spring boot
+Database pgsql 
+Kubernetes 
+Prometheus pour la surveillance 
+Terraform Ansible. 
+(photo) 
+
+Point de départ :compte AWS, un domaine acheté chez Gandi
+
+Crash course
+====infra as code
+1. Provisioning d'infra (hardware) . Il me faut des serveurs pour pouvoir host mon infra (serveurs, réseau etc... Provisioning d'knfra->cloud provider permettende monter des serveur plus facilement 
+2.Configuration management installatiln du socle technique qui va nous permettre de faire tourner mon appli. management
+3orchestration d'application. Faire tourner les appli, gérer le cycle de vie de l'app, gestio'
+L'infra as code c'est faire tout ça ensemble 
+
+IaC c'est faire sous forme de code 
+
+====Gitops
+L'iaC comme d'écrire précédemment te représente ton truc à un temps t
+Mais faut le versionner.
+Gitops c'est d'avoir une source de vérité Git, dans lequel je mets mon code d'infra que je vais pouvoir synchroniser à un instant t par rapport à ce qui est déployé
+
+====De docker à Kubernetes
+Ce qu'on produit en tant que dev c'est un artefact, le runtime c'est ce qui va permettre de faire tourner l'art
+Le problème est que souvent c'est les équipe ops qui mettent en place le runtime alors que c'est les devs qui l'utilisent.
+Donc dans l'idée un truc cool serait que les dev gèrent le runtime et c'est ça que permets docker. Le dev gère son environnement technique grâce à des container. 
+L'artefact a changé. C'est maintenant une image docker comprenant le code source+ le containers ce qui permets lidem potence.
+
+Quelques limitations tout de même en terme de gestion.
+On a besoin d'un chef d'orchestre pour gérer tout ça que docker compose permet pas de gérer.
+Un docker compose sur un seul serveur ça passe. Plusisuer docker compose sur 1 serveur ca devient galère. Plusieurs sur plusieurs serveur ça devient impossible docker compose sert pas à ça.
+L'orchestrator par défaut pour gérer tout ça maintenant c'est Kubernetes
+
+====Kubernetes
+Ça rend facile le management d'application (photo) 
+
+Point archi:d'un côté les worker nodes qui font tourner les container de l'autre les master nodes qui font la gestion
+Kube api via cette api on gère tout ! De Kubernetes.
+**Dans Kubernetes TOUT est resources.**
+On va d'écrire ces resources en yaml indiquant la resources vers cet état.
+Et Kubernetes va faire en sorte de faire converger ces resources vers l'état qui nous intéresse
+
+
+Resources de base de Kubernetes : le pod en gros un container
+Replica set: Une consigne permettant de répliquer x fois une ressources
+Le deployment : le container que je veux lancer, dans quelle version et quel état
+Le deployment est donc la super ressource pour gérer les images successive de l'application. Il embarqué nos éléments précédents (Photos)
+
+Configmap +secrets: injecter variables d'env +fichiers à nos pods
+Differences config map en clair et secrets en chiffrés
+
+Service :va nous permettre de Maintenant in veut publier l'applicatif. Le service permets de jouer les load balancer en interne.
+Si on veut publier sur internet on va plutôt utiliser **l'ingress** c'est un reverse proxy.
+Contrairement aux autre ressources l'ingress marche pas comme par défaut.
+Le **namespace** espace de nommage regroupant toutes les ressources lié à un projet.
+
