@@ -149,7 +149,7 @@ BucketS3 permet de stocker des infos, on va donc y persister les infos de notre 
 
 A retenir de K8S  (photos) 
 
-===episode 4 Mes environnement
+=== episode 4 Mes environnement
 
 On veut passer de 1 à 'environnements. Va falloir modifier pas mal de trucs. 
 
@@ -169,7 +169,7 @@ Creatikn d'un projet en admin
 
 
 
-Monnitrijkng. Centralisé par lo'utld'vikz
+Monitoring Centralisé par l'outils
 
 Argocd, chef de chantier. Va comparer l'état des spes d'app déployé avec l'attendu et remonte des alertes si desynchro
 Faire cette conf en manuel ok c'est faisable mais si j'ai 90 appli on va pas faire ça. Fort heureusement  dans Kubernetes tous est ressources ! 
