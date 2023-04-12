@@ -68,3 +68,38 @@ Si on veut publier sur internet on va plutôt utiliser **l'ingress** c'est un re
 Contrairement aux autre ressources l'ingress marche pas comme par défaut.
 Le **namespace** espace de nommage regroupant toutes les ressources lié à un projet.
 
+===Episode 1 déployer infra
+====EKS
+Eks c'est le Kubernetes managé propose par AWS d'amazone
+Particularité d'eks
+AZ=avaibility zone= centre réseau entier pour aws
+====terraform
+
+Solution d'automation de l'infra et de providing des resources cloud.
+
+====GitlabCicd
+Solution de choix pour le déploiement
+
+Architecture:
+Un dossier sur gitlab. Repo Terraform qu'on ça déployer chez Aws
+
+Code Terraform des fichiers en. Tf.
+On va d'écrire sous forme de code notre infra
+On va indiquer notre provider, où il est déployé.
+Les ressources, déclaré en snake case et indiquer sur quel provider c'est envoyé.
+Declaratiin de Var (photo)
+On peut fournir un fichier contenant toutes les variablss
+Ou on peu déclarer des variables d'env
+Ou on peut tout déclarer en lignes de commandes
+
+Comment connaître l'ip du PROVIDER? => Variables output.
+Le fichier. Tfstate est un fichier de sortie donnant l'ensemble des informations de notre infra déployée.
+Mais fichier três três verbeux Donc Il est plus simple de définir aussi des variables d e sortie pour flag les infos qui nous interesse
+
+Les modules permettent de recouper tout ça.
+
+===cycle de vie.
+Terraform init pour initialiser tout ça.
+Le plan va resynchro notre app avec le Tfstate.
+L'apply fait le déploiement et défait le tfstate
+Le destroy permet de tout effacer
