@@ -174,3 +174,12 @@ Monitoring Centralisé par l'outils
 Argocd, chef de chantier. Va comparer l'état des spes d'app déployé avec l'attendu et remonte des alertes si desynchro
 Faire cette conf en manuel ok c'est faisable mais si j'ai 90 appli on va pas faire ça. Fort heureusement  dans Kubernetes tous est ressources ! 
 Les éléments proposé par Argo peuvent eux aussi être déclaré en ressources et scriptés
+
+
+===Questions
+
+Le code est très lié au cloud provider Donc so on change de cloud provider faut recoder, les apis à appeler doivent être mis à jour aussi.
+
+Comment gerer les secret dans k8s. Deux manières
+Le silksecret :chiffrer les secrets avec une clé posée dans un repo git mais difficile de faire de la rotation 
+GoSecret projet gérer par la communauté marche via un secret store
