@@ -269,3 +269,11 @@ Si on fait une requête au pod avant qu'il soit démarré erreur => readiness pr
 
 Liveness probe pour vérifier si le probe est toujours vivant
 
+Si un pod marche pas faire un Kubectl describe
+
+Les secrets dans Kubernetes sont stockée dans ETCD, ils sont juste encodés en base 64 donc pas ultra secrets
+Il faut donc coupler ça avec une infrastructure externe comme des vault.
+
+Il ne faut pas tenter de stocker des choses dans un pod ou un node, ce sont des structures transitant.
+Si on doit vraiment stocker des données dans Kubernetes il faut créer un volume persistant. Mais chaque cloud provider utilise des trucs differents
+Il faut que le persistant volume create puisse claim Un bout de disque dur quelques part
