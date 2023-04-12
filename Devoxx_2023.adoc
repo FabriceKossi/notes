@@ -113,11 +113,64 @@ Et on le déploie sur l'inventaire
 
 Ansible utilise aussi des modules et on peut remarque que comme Terraform on peut déclarer l'état attendu. 
 
+Comment se connecter à K8s ? 
+Le kube-config
+Terraform ça filer un tf.state,que Ansible va aller chopper pour faire sa config
+
+Artifacthub, site permettant de récupérer vite des packages.
+Prendre le soin de transformer les commandes en module pour faire du déclaratif plutôt que de l'impératif 
+
+
+Terraform comme Ansible vont utiliser le Tf. State
+
+Terraform est la pour gérer des ressources.
+Dans Ansible par contre on a des notions de tasks ! 
+Donc si je veux par exemple demander d'attendre 5mn qu'un service soit up, Terraform est pas. Vraiment fait pour ça. 
+
+Ansible n'a par contre pas de notion de tf state donc pas de manière de vraiment aller stocker des états et sauvegarder nos vars à réutiliser 
+
+Donc des besoins différents remplis par chaque outils. 
+
+
+
+===PGSL
+
+Notre base de donnée on la veut persistence par contre. Contrairement aux pods que l'on kill et recree
+
+Bdd production ready: (photo) 
+On pourrait utiliser le rdd Amazon qui filé tout ça production ready mais ca coûte une blinde et est très lié à Amazon 
+On va donc se le créer nous meme
+
+Dans K8S on a ce qu'on appelle un **Operator** c'est une ressource permettant de créer de nouvelles ressources. 
+Puisque la nouvelle ressource est custom il nous faut un Controller qui est le cerveau qui interprétera la nouvelles ressource. 
+On va donc creee
+
+BucketS3 permet de stocker des infos, on va donc y persister les infos de notre bdd
+
+A retenir de K8S  (photos) 
+
+===episode 4 Mes environnement
+
+On veut passer de 1 à 'environnements. Va falloir modifier pas mal de trucs. 
+
+Côte Terraform. On va ajouter un front end et un backend en créant des clusters
+
+Côté Ansible on va juste mettre à jour l' inventory 
+Côté K8S modif des yaml-> on va utiliser un moteur de templating. 
+On va utiliser helm qu'on utilisait plus tôt juste comme manager de ressources mais on peut aussi l'utiliser pour gérer le templating via le 
+Vqriables
+
+Pipeline gitlab.
+On va créer un cluster tesch'ique qui sera transient aux autres enviromment les elmements du cluster technique seront communs aux autres
+Rancher outils supplémentaire d'administration 
+Creatikn d'un projet en admin
 
 
 
 
 
+Monnitrijkng. Centralisé par lo'utld'vikz
 
-
-
+Argocd, chef de chantier. Va comparer l'état des spes d'app déployé avec l'attendu et remonte des alertes si desynchro
+Faire cette conf en manuel ok c'est faisable mais si j'ai 90 appli on va pas faire ça. Fort heureusement  dans Kubernetes tous est ressources ! 
+Les éléments proposé par Argo peuvent eux aussi être déclaré en ressources et scriptés
