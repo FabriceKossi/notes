@@ -176,10 +176,80 @@ Faire cette conf en manuel ok c'est faisable mais si j'ai 90 appli on va pas fai
 Les éléments proposé par Argo peuvent eux aussi être déclaré en ressources et scriptés
 
 
-===Questions
+====Questions
 
 Le code est très lié au cloud provider Donc so on change de cloud provider faut recoder, les apis à appeler doivent être mis à jour aussi.
 
 Comment gerer les secret dans k8s. Deux manières
 Le silksecret :chiffrer les secrets avec une clé posée dans un repo git mais difficile de faire de la rotation 
 GoSecret projet gérer par la communauté marche via un secret store
+
+
+
+=== Kubernetes, dépassionné et pour les ultra débutants
+
+.Speaker: Sébastien Blanc (Aiven) , Horacio González (cofondateur du @FinistDevs, et des @RdvSpeakers.), , Sun Tan (RedHat) 
+
+==== Pourquoi k8S ?
+Retour d'exp, 
+pain point 1: déploiement Manuel =fut un temps Sun Tan devait build ses projets à la main puis faire un ticket aux equipe de prod pour qu'ils déploient manuellement.
+Pain point 2: soucis de scaling
+Pain point 3: debugger en prod parce que les envs de dev et de prod sont rarement Iso.
+
+
+===== Containers
+(photo) 
+
+Deux gros outils pour gérer les containers Docker et Podman
+
+Récupération d'une image docker, on la docker run
+Docker ps permet le listing des docker
+Docker exec [container Id] command pour la'cer une commande dans le container
+
+Limitation chaque container est isolé et n'a pas idée de ce qui ce passe dans les autres
+
+Le principe des container est bien plus vieux que docker mais docker la remis au goût du jour en le rendant plus pratique
+D'après Sun l'un des avantages de docker a été de permettre une utilisation assez similaire à ce qui est fait de manière traditionnelle avec du java.
+Système de container orienté developer. 
+Un autre avantage l'utilisation du docker permet de livrer une image avec runtime donc plus de soucis de "ca marche sur mon pc" 
+Mais super difficile côté sys admin parce qu'au lieu d'avoir une seule appli à gérer installer et réparer y a maintenant 15 containers solo qui parlent entre elles. 
+Il se tape donc plein de petites taches pas forcément très compliqués mais sans grandes valeures ajoutées. Dans une telle situation ce sys admin aimerait bien un petit stagiaire pour se charger de tout le taf rébarbatif. 
+Kubernetes est notre stagiaire virtuel, il a pour responsabilité de gérer toutes les tâches de surveillance et de maintenance. Et il nous appelle quand y a de gros soucis. 
+Kubernetes n'est ni le premier orchestrator ni même le plus perf. 
+Mais il set sur un sweet spot entre fonctionnalités et complexité. 
+
+==== Qu'est ce que Kubernetes ? 
+
+K8S est bati autour d'un apiServer. Tout tourne autour de lui et est très modulaire. 
+(Photo) 
+
+Etcd=la memoire du container, 
+les control planes 
+
+Sur Kubernetes on utilize pas directement des containers, mais plutôt des pods. 
+Pourquoi rajouter un niveau de complexité supplémentaire au lieu de juste utiliser directement les cokntainers. 
+Imaginons on a un container wordpad qui discute avec un cokntainers Mysql. Audit de secu in ta tape dessus parce que pas de chiffrement de la communication entre les deux container comment régler ? 
+On se tape de la recherche de lib compatible entre les deux containers. C'est galère. 
+Avantage du pod, puisque le pod est l'unité de base il t'es possible de rajouter dans le circuit un pod chargé uniquement de la secu
+
+Desired state management 
+On est en mode déclaratif, on utilise des **manifest**, du yaml parce que Kubernetes provient du python
+L'utilisation du yaml a ses limitations, mais un côté pratique est qu'il est facilement lisible.
+Sa raison d'être est de nous permettre de filer des instructions à notre stagiaire 
+On peut être super haut niveau et juste dire à notre stagiaire "déploie moi  mes pods, tu les fous où tu veux, tu les fous comme tu veux, je veux juste qu 'ils soient déployés. 
+Dans ce cas là Kubernetes va déterminer par lui même le meilleure moyen de faire ce qui est demandé. 
+Mais on peut aussi être très précis dans les manifest, donner des limitation de nombre d epods de mémoire utiliser, etc... 
+Donc assez flexible comme systeme
+
+Deploiement: usine à pod
+Service va associé un déploiements a un point d'entrée dans le cluster via les nodes ports. (node port:port unique dans le cluster permettant d'y accéder) 
+Mais si t'as 25 services t'as 25 ports a retenir, super chiant. C'est la où on entre en jeu le Ingress qui va rationaliser tout ça et service de port d'entrée unique. 
+Le Load balancer: récupère une adresse IP public pour mettre en ligne notre projet
+
+==== namespace
+S'amuser avec Kubectl pratique quand on commence avec Kubernetes pour comprendre. C'est ligne de commande qui nous permet de communiquer avec le kubeapi
+La syntaxe est simple: Kubectl verbe objet. 
+
+Le names pace Est un niveaux d'abstraction supplémentaire. Il nous permets d'assigner nos pods, services cluster etc.. A un env
+Kubens petit outils permettant de changer facilement de namespace
+Pas mal d'outils permettant de rendre l'expérience Kubernetes plus facile d'utilisation. On commence on au début avec Kubectl mais on fini vite par utiliser tout ces éléments qui facilitent la vie
