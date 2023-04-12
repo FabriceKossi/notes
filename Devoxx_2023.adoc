@@ -277,3 +277,23 @@ Il faut donc coupler ça avec une infrastructure externe comme des vault.
 Il ne faut pas tenter de stocker des choses dans un pod ou un node, ce sont des structures transitant.
 Si on doit vraiment stocker des données dans Kubernetes il faut créer un volume persistant. Mais chaque cloud provider utilise des trucs differents
 Il faut que le persistant volume create puisse claim Un bout de disque dur quelques part
+
+=== Les secrets de spring
+
+==== principe de base de spring => Inversion de contrôle
+Couplage lâche par interface. Il s'agit de savoir à quel point une classe peut en connaître une autre.
+Il faut limiter la dépendance car plus y a de dépendance moins c'est simple à modifier/tester
+
+Spring ça faire les instanciation pour nous ainsi que le code tuyauterie
+
+Quand on démarre un application context un Bean factory post processor va lire les definitions de beans et peut meme les modifier avant de les initialiser.
+Selon la configuration de bean utilisé c'est différant beans definitions qui seront utilisés
+
+L'interface resource de spring. Sans l'exemple donnée le code récupère des infos d'un feed RSS youtube. Il a juste à modifier 
+Spring a géré le code pour toute la partie jmx
+
+Demo 2 BeanFactory post processor on a modifié le filtre. 
+
+
+Le BeanFactory post processor va itereesur les definition de bean pour les modifié après leur charge par spring. 
+Durant la phase d'initialisation intervient le Bean post processor avec un @PobeforeInitialisation et un @afterprocessInitializarion qui nous permettront de travailler sur ces beans avant et/ou après la génération des bean
