@@ -34,6 +34,8 @@ L'iaC comme d'écrire précédemment te représente ton truc à un temps t
 Mais faut le versionner.
 Gitops c'est d'avoir une source de vérité Git, dans lequel je mets mon code d'infra que je vais pouvoir synchroniser à un instant t par rapport à ce qui est déployé
 
+Cas autoscale du cluster. Si on demande plus de ressources que dispo à note cluster. 
+
 ==== De docker à Kubernetes
 Ce qu'on produit en tant que dev c'est un artefact, le runtime c'est ce qui va permettre de faire tourner l'art
 Le problème est que souvent c'est les équipe ops qui mettent en place le runtime alors que c'est les devs qui l'utilisent.
@@ -258,3 +260,12 @@ Pas mal d'outils permettant de rendre l'expérience Kubernetes plus facile d'uti
 Dans une bdd de type yaml on peut créer des objets de type speaker
 
 On modifie une ressource, on transmet la commande au controller et celui ci l'applique
+
+Autoscale, si on demande à un cluster plus de resources qu'il n'en a, notre stagiaire va automatiquement commander des ressources.
+
+=== Health Prove
+Si on fait une requête au pod avant qu'il soit démarré erreur => readiness probes, vérifie que le le pod est up, si il retourne pas de 200 on retente dans x seconde.
+
+
+Liveness probe pour vérifier si le probe est toujours vivant
+
