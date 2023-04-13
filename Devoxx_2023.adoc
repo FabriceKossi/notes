@@ -563,3 +563,84 @@ Correction en test vert
 -notion de refeacto
 
 3 aspects dans le live : pyramide de test+TDD+archi hexa
+
+
+=== Architecture as code
+
+The code is the truth but not the whole truth
+
+==== A quelles questions répondre?
+
+Qui? quoi ? quand? où ? Pourquoi ? Comment?
+Y a un certain  nombre de question pour lesquelles on a pas de réponse. Souvent c'est "Pourquoi?" pourquoi est ce qu'on a décidé de developer det elle ou telle maniere. Il s'agit souvent là de question d'architecture
+
+==== Mais comment documenter l'architecture ?
+Exercice Cas d'usage Sup la seine.
+Des casiers à paddle permettant de se deplacer 4
+
+C4 methode pour faire de bon diagrammes.
+
+ * C4 - Context:
+    Liste des utilisateurs 
+
+* C4 container:
+
+Les elements signifiant de l'archi, ce ne sont pas forcément des container docker. Ce ne sont pas forcement  des modulesMaven.
+
+* C4 
+https://c4model.com/
+
+COmment faire mieux?
+
+STRUCTURIZR
+
+https://structurizr.com/share/76352/documentation#start-structurizr-lite
+https://dev.to/simonbrown/getting-started-with-structurizr-lite-27d0
+On conttruit un modele plutot qu'une simple image et on peut l'associer à du code
+
+Quand on commence à faire le diag d'archi on ne met pas la techno, quand l'archi est un peu plus sec on 
+Attention le dsl est interpreté dans l'ordre
+workspace.dsl
+workspace{
+    model{
+        Super = person "SUPer" "un amateur de SUP voulant se promener sur la scene"
+        renter = person "Loeur" "un loeur de paddle"
+        supLocker = container
+        
+        enterprise{
+        }
+        view {
+            #Vu system
+            SystemContext supSystem supCintextVieuw{
+                incluse * #va récuperer tous les élément de type Systeme 
+                autoLayout
+                }
+            #Vu conteneur
+            container supSystem supContainersVieuw{
+                include *
+                autoLayout
+               }
+               
+           theme default
+           styles{
+            element "mobile {
+                shape MobileDevicePortrait
+           }
+           
+           prod = deployementEnvironment "Prod" {
+                deploymentNode "Systemee de paiement prod"{
+                    softwareSystemInstance paymentSystem
+                }
+                
+           }    
+           
+           La partie deploiement n'est pas présente dans C4, C' etait un peu trop abstrait mais finalement ça a été ajouté.
+           pour gerer le deploiement faut creeer un env de deploiement ("deployementEnvironment") avec autant d'elements deploymentNode
+           
+          C'est important le theme et le style lorsqu'on présente le graph à des nons devs. Une façon un peu nice de reprensenter un objet interlligent 
+          
+          On créé un noeud messagingAsService et un noeud d'infrastructure
+          Pas ouf mais il faut recreer les relation de messaging à chaque fois plutot que 'd'utiliser les relations crées par dfaut.
+          
+          
+          plugin C4 dans vscode
