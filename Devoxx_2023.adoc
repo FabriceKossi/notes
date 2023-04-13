@@ -424,3 +424,6 @@ Il faut supprimer les données dans les backup aussi ! Non seulement pour le. RG
 
 Les db's relationnels(photos) 
 
+Utiliser les bdd existantes
+Généralistes vs spécifique. Pas mettre toute les données dans la même bdd mais l'adapter au besoin
+Tester régulièrement les perfis 
