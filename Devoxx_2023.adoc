@@ -278,6 +278,59 @@ Il ne faut pas tenter de stocker des choses dans un pod ou un node, ce sont des 
 Si on doit vraiment stocker des données dans Kubernetes il faut créer un volume persistant. Mais chaque cloud provider utilise des trucs differents
 Il faut que le persistant volume create puisse claim Un bout de disque dur quelques part
 
+=== NIX 
+nix langage immmutable, utilisant le package manager appelé nix
+nix-repl permets d'ecrire du code
+
+Unfichier nix n'a qu'un seul operateur. Si on veut faire plusieurs chose dans un fichier nix on va utiliser l'operateur let va nous permettre d edeclarer plus de choses:
+
+let
+    a=1;
+    b=1;
+    f= import ./add.nix;
+in 
+f {a=a}
+
+first-package.nix
+let
+   pkgs= import <nixpkgs> {};
+in
+    pkgs.stdenv.mkdirection{
+        name="devoxx";
+        src="./."
+    }
+
+catimg.nix
+let
+   pkgs= import <nixpkgs> {};
+in
+    pkgs.stdenv.mkdirection{
+        name="catimg";
+        native.BuildimpImput[pkgs.make];
+        src=pkgs.fetchFromGitHub{
+            rev = "#Sha de la derniere revision du repo sur git"
+            repo= "catimg";
+
+        }
+    }
+
+
+
+un shell nix peut etre pur ou impur. Un shell est pur si il n'y a rien d'importé 
+pkgs= import <nixpkgs> {};
+pour pouvoir import des packages  on peut soit déclarer pkgs."nom de l'import" soit juste faire un with pkgs;
+puis entre crochet déclaré tous les pkgs qui nous interessent
+
+pkgs c'est la release de packaging de la distribution nix ou linux presente sur la machine.
+donc le contenu de pkgs va dépendre de l'install ou de la version d
+
+$out es là ou le builder de nix va ecrire ses sorties
+
+construire une derivation depuis github consiste juste à dire au programme nix quel repo aller chercher, de quel owner , en quel version et derriere tu peux juste l'appeler
+tous les packages nix sont ecrientt de la meme maniere
+
+N'importe qui recuperant ce nix shell utilisera la meme version de java, de python, etc...
+
 === Les secrets de spring
 
 ==== principe de base de spring => Inversion de contrôle
