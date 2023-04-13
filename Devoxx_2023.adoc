@@ -297,3 +297,40 @@ Demo 2 BeanFactory post processor on a modifié le filtre.
 
 Le BeanFactory post processor va itereesur les definition de bean pour les modifié après leur charge par spring. 
 Durant la phase d'initialisation intervient le Bean post processor avec un @PobeforeInitialisation et un @afterprocessInitializarion qui nous permettront de travailler sur ces beans avant et/ou après la génération des bean
+
+== JEUDI
+
+Ia classique on donne des données à la machine et on la spécialise, on l'entraîne pour faire un truc
+Ia generative on lui file juste des données et on lui dit vas cherche, trouve moi un truc
+Ia generative est le moment où les choses ont changé, c'est une rupture, un changement non anticipé aux implication non connu 
+Comme pour tout autre révolution on s'est pas dit je vais faire un truc moins bon que moi. 
+De la même manière on concevant l'Ia on s'est dit qu'on ferai un truc meilleur que nous au moins sous un aspect. 
+
+L'humain donne du sens à ce qu'il fait. L'Ia va pouvoir des relations entre des trucs dont elle ne saisi pas le sens
+Par exemple un nouveau paradigme de traduction en voyant des relations qu'on avait jamais vu. 
+
+
+
+Création vs Innovation 
+
+Pour l'instant la machine ne peut que créer pas Innover
+L'innovation est de créer de manières différentes, de faire de la nouveauté. Pour l'instant la machine y ai pas encore. 
+
+Concept de promp
+ Au début on se disait des années 60 moi en tant que dev je dis à la machine ce qu'elle doit faire et pour l'utilisateur finale c'est la machine qui lui dit comment elle doit être utilisé (si y a pas de bouton pour faire ça l'utilisateur peut rie faire) 
+Avec le prompt on parle a la machine avec un langage humain dans un contexte donné , donc donc l'humain reprend la makn
+
+Github copilot, on code un truc on donne un contexte à l'ia, le contexte serait notre code. 
+On va interagir avec L'Ia, on lui demande un truc il va proposer une réponse on peut lui dire si on accepte ou non et à apprendre selon nos retour positifs ou négatifs. 
+Le principe du prompt est que la machine va saisir l'intention de l'utilisateur et repondre selon ce qu'elle a compris de l'intention 
+
+==== que va nous permettre l'Ia ? 
+
+Rapidité d'écriture 
+Diminuer le temps de réalisation d'un truc fonctionnel 
+Maintenablité
+Sécurisation 
+
+L'Ia generative est en train de changer tous les metiers de type création
+D'après les stats IDC de l'année dernière on ne code que 10% de notre code. On utilise des framework, des librairies, des apis etc... 
+Donc l'Ia pourrait peut être simplement enlever encore quelque % pour nous permettre de rester concentrer sur le code qui a du sens 
