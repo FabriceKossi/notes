@@ -470,3 +470,7 @@ Le docker dame on fait tout et il a les droit root. Exploit facile pour être en
 Desilusion.
 Puisque le problème viens du daemon monolithique les solutions proposé maintenant se font sans dameon comme Podman
 Podman est daemonless et rootless
+
+Webasembly(WASM) dans l'idée faire tourner autre chose que du Javascript
+
+Grosse nouveauté Docker va intégrer wasm
