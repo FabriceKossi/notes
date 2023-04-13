@@ -507,3 +507,4 @@ Bouncle de TDD,
 Correction en test vert
 -notion de refeacto
 
+3 aspects dans le live : pyramide de test+TDD+archi hexa
