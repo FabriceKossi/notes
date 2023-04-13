@@ -334,3 +334,93 @@ Sécurisation
 L'Ia generative est en train de changer tous les metiers de type création
 D'après les stats IDC de l'année dernière on ne code que 10% de notre code. On utilise des framework, des librairies, des apis etc... 
 Donc l'Ia pourrait peut être simplement enlever encore quelque % pour nous permettre de rester concentrer sur le code qui a du sens 
+
+=== comment choisir une bdd
+
+==== les db's relationnelles.
+Data stockées dans des tables, celles ci ont reste relatoions entre elles, des jointures (exs Pgsql, Oracle...)
+
+==== les db's  dockments
+Les donnees sont stockées sous forme de docs, format json (ex mongoDB)
+
+==== les db search
+
+Index+ documents, possibilités de fuzzy seach c'est a dire avoir une tolérance aux fautes. (ex elasticsearch) 
+
+Beaucoup beaucoup trop de type de bdd comment choisir ? 
+
+Quelques axes de decisions.
+
+=== comprendre son besoin
+==== les types de requêtes
+===== requête par id
+Requête par identifiant, l'id peut faire le lien entre les tables, impacter l'agencement de kos données etc... 
+Ca rend plus difficile de chercher sur les champs secondaire (photo) 
+L'ajout d'un index peut être pratique si les donnes bouges pas constamment 
+====== requête de recherche et recherche par score
+Photos
+==== transactions
+
+Deux éléments a pendre en compte 
+Transactions acid
+Niveau d'isolation 
+
+Les bases de données relationnelles sont généralement reine 
+
+==== les résultats 
+Est ce que je vais retourner toute la bdd ? Le faire sur 50 pages ? 
+==== insertion et modification 
+Taile des donnés, fréquences
+==== suppressions et expiration 
+Expiration automatique et coût de suppressions important car RGPD
+Dépend totalement de l' implémentation 
+==== langage de requêtes et drivers
+==== structure 
+Struct fixe:on connaît la donnée on peut a valider facilement - > relatilnnel
+Struct flexible on a pas la main sur ce qui nous seras envoyé-> key value
+(photo) 
+
+Sparsedate et column est optimisé pour gérer les valeures null
+
+==== Contrainte d'intégrité 
+==== contrainte de type
+
+
+=== evolutivite
+
+Si la donnes est vouée à changer plutôt taper sur du relationnelle. 
+
+=== volume de données. 
+Volume faible<1go, bdd in memory 
+Volume colossal
+
+Disponibilité de la bdd: si multiple bdd, l'utilisateur rente de se CO à une bdd elle crash et automatiquement il est redirigé vês une autre instance, c'est la dispo
+
+La scalabilité c'est géré le nombre d'knsrance généré selon la quantité d'utilisateurs qui tente de se co
+
+Partitionnement stratégie de réplication 
+
+Standby replica 
+Warm scale En ecrit 
+Hot: scale en lecture et noeud secondaire sans forcément la donnes la plus à jour (eventual inconsistency) 
+
+Partition: on écrit sur la partition primaire et l'info est répliqué dans les partitions secondaires
+
+
+Mode de clustering :
+Cassandra. Plein d'options
+Écrire sur un nœud, infos répliqué sur certain noeud. Risque d'appeler sur un nœud pas à jour. 
+
+Possibilité d'écrire sur tous les nœuds mais lire sur un seul, on va ainsi optimisé la lecture. 
+Strat intermediário écrire et lire sur 'a majorité absolu des nœuds e
+
+Gestion automatique de replica et cluster via les bdd managés mais risque de vendor lock
+
+=== Maintenance and recovery
+
+Faire des snapshot régulier afin de pouvoir faire des recovery si problème. Les strats dependent des bdd
+
+Il faut supprimer les données dans les backup aussi ! Non seulement pour le. RGPD mais aussi parce qu'on voudrait pas restorer des données censé être supprimé 
+
+Les db's relationnels(photos) 
+
