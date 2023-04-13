@@ -442,3 +442,31 @@ Tracer les bugs, les choix d'implem pour retrouver pourquoi j'ai implementer un 
 
 Sécurité, ne pas laisser traîner les notes que ce soit pour la secu projet ou même juste pour pas filé des infos persos à tous ceux qui passent
 Fine tuning revenir régulièrement sur les précédentes entry à 1jour 1semaine et 1mois afin de savoir ce qu'k' peut améliorer dans notre capitalisation
+
+=== l'histoire de la conteneurisation 
+
+Conteur : pas de Def officiel, ensemble d'élément isolé du système 
+Runtime :ensemble des logiciel permettant de faire tourner une application indepemment de l'os
+
+L'idée originale de conteneur apparaît avec la création des système Unix (1972) ordinateur rare et cher donc partager les resources est essentiel.
+De plus vu que peu de machines test et prod tournent en parallèle sur la même machine. Donc nécessité d'isoler les process= conteneur
+
+
+Chroot notion de jail tu plage la src a un point que tu veux de l'arbo et on a pas acces au reste (d'où jail)
+
+JULIA EVANS explication conteneur 
+
+2004 Solaris. Zone Solaris fonctionnnt comme autant de serveur individuels.
+
+2013/02 ajout des user namespace au noyaux Linux. C'est ce qui a rendu docker possible et qui arrive le mois suivant en mars. 
+Objectif de docker rendre la gestion des containers simples pour les devs plutôt que centré ops. 
+
+Pourquoi docker? Condtat il est plus simple de ship du café a travers le monde que de se partager des logiciels de manière fiable et automatique
+1956 conteneur maritime pourquoi ? Quelque soit le contenu du contenuur voiture vélo pia'on le conteneur lui même a toujours le même dimensions, les même system d'ouvertures etc... Bref normalisation
+C'est exactement ce qu'on va reprendre comme principe. 
+
+C'est génial mais crainte et hésitation côté sécurité 
+Le docker dame on fait tout et il a les droit root. Exploit facile pour être en root sur l'os du host.
+Desilusion.
+Puisque le problème viens du daemon monolithique les solutions proposé maintenant se font sans dameon comme Podman
+Podman est daemonless et rootless
