@@ -502,4 +502,8 @@ Alors pourquoi en tant que dev in se présente comme expert angular, ou un exper
 Architecture hexagolnal
 
 
-Ar
+Bouncle de TDD, 
+-Création du test rouge 
+Correction en test vert
+-notion de refeacto
+
