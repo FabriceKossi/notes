@@ -601,6 +601,8 @@ On conttruit un modele plutot qu'une simple image et on peut l'associer à du co
 Quand on commence à faire le diag d'archi on ne met pas la techno, quand l'archi est un peu plus sec on 
 Attention le dsl est interpreté dans l'ordre
 workspace.dsl
+[source,dsl]
+----
 workspace{
     model{
         Super = person "SUPer" "un amateur de SUP voulant se promener sur la scene"
@@ -633,7 +635,7 @@ workspace{
                 }
                 
            }    
-           
+----         
            La partie deploiement n'est pas présente dans C4, C' etait un peu trop abstrait mais finalement ça a été ajouté.
            pour gerer le deploiement faut creeer un env de deploiement ("deployementEnvironment") avec autant d'elements deploymentNode
            
@@ -644,3 +646,16 @@ workspace{
           
           
           plugin C4 dans vscode
+    utilisation de la methode lintmodele sur notre fichier dsl.
+    il va balancer des erreur pour toutes les mauvaises pratiques sur le model créé
+    
+    Structurizercloud enorme faille de secu tu venvoies des infos critiques sur l'appli à 
+    
+    Avec structurizr le cycle de vie de votre diagram d'archi n'est pas le cycle de vie de votre code
+    on peut ce faire une methode our convertir le dsl en fichier uml
+    check https://github.com/structurizr/dsl
+    
+    check IcePanel
+    
+    Les diagramme c'est bon juste pour le court terme!!! Privilégié le modele quand on arrive à des trucs plus définitifs
+    beaucoup de resources de Simon Brown - the lost art of SoftwareDesign
