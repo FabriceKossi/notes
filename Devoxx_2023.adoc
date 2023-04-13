@@ -21,7 +21,9 @@ Terraform Ansible.
 Point de départ :compte AWS, un domaine acheté chez Gandi
 
 Crash course
+
 ==== infra as code
+
 1. Provisioning d'infra (hardware) . Il me faut des serveurs pour pouvoir host mon infra (serveurs, réseau etc... Provisioning d'knfra->cloud provider permettende monter des serveur plus facilement 
 2.Configuration management installatiln du socle technique qui va nous permettre de faire tourner mon appli. management
 3orchestration d'application. Faire tourner les appli, gérer le cycle de vie de l'app, gestio'
@@ -30,6 +32,7 @@ L'infra as code c'est faire tout ça ensemble
 IaC c'est faire sous forme de code 
 
 ==== Gitops
+
 L'iaC comme d'écrire précédemment te représente ton truc à un temps t
 Mais faut le versionner.
 Gitops c'est d'avoir une source de vérité Git, dans lequel je mets mon code d'infra que je vais pouvoir synchroniser à un instant t par rapport à ce qui est déployé
@@ -37,6 +40,7 @@ Gitops c'est d'avoir une source de vérité Git, dans lequel je mets mon code d'
 Cas autoscale du cluster. Si on demande plus de ressources que dispo à note cluster. 
 
 ==== De docker à Kubernetes
+
 Ce qu'on produit en tant que dev c'est un artefact, le runtime c'est ce qui va permettre de faire tourner l'art
 Le problème est que souvent c'est les équipe ops qui mettent en place le runtime alors que c'est les devs qui l'utilisent.
 Donc dans l'idée un truc cool serait que les dev gèrent le runtime et c'est ça que permets docker. Le dev gère son environnement technique grâce à des container. 
@@ -48,6 +52,7 @@ Un docker compose sur un seul serveur ça passe. Plusisuer docker compose sur 1 
 L'orchestrator par défaut pour gérer tout ça maintenant c'est Kubernetes
 
 ==== Kubernetes
+
 Ça rend facile le management d'application (photo) 
 
 Point archi:d'un côté les worker nodes qui font tourner les container de l'autre les master nodes qui font la gestion
@@ -71,18 +76,23 @@ Contrairement aux autre ressources l'ingress marche pas comme par défaut.
 Le **namespace** espace de nommage regroupant toutes les ressources lié à un projet.
 
 ==== Episode 1 déployer infra
+
 ===== EKS
+
 Eks c'est le Kubernetes managé propose par AWS d'amazone
 Particularité d'eks
 AZ=avaibility zone= centre réseau entier pour aws
+
 ===== terraform
 
 Solution d'automation de l'infra et de providing des resources cloud.
 
 ===== GitlabCicd
+
 Solution de choix pour le déploiement
 
 ===== Architecture:
+
 Un dossier sur gitlab. Repo Terraform qu'on ça déployer chez Aws
 
 Code Terraform des fichiers en. Tf.
@@ -101,12 +111,14 @@ Mais fichier três três verbeux Donc Il est plus simple de définir aussi des v
 Les modules permettent de recouper tout ça.
 
 ==== cycle de vie.
+
 Terraform init pour initialiser tout ça.
 Le plan va resynchro notre app avec le Tfstate.
 L'apply fait le déploiement et défait le tfstate
 Le destroy permet de tout effacer
 
 ==== Ansible :plate-forme pour configurer et manager des plate-forme
+
 Controle node pour manager Ansible et ses modules. 
 Inventaire permet de lister les machines notamment. Mais on va a plus l'utiliser pour lister où doivent être deployé les éléments 
 
@@ -193,6 +205,7 @@ GoSecret projet gérer par la communauté marche via un secret store
 .Speaker: Sébastien Blanc (Aiven) , Horacio González (cofondateur du @FinistDevs, et des @RdvSpeakers.), , Sun Tan (RedHat) 
 
 ==== Pourquoi k8S ?
+
 Retour d'exp, 
 pain point 1: déploiement Manuel =fut un temps Sun Tan devait build ses projets à la main puis faire un ticket aux equipe de prod pour qu'ils déploient manuellement.
 Pain point 2: soucis de scaling
@@ -200,6 +213,7 @@ Pain point 3: debugger en prod parce que les envs de dev et de prod sont raremen
 
 
 ===== Containers
+
 (photo) 
 
 Deux gros outils pour gérer les containers Docker et Podman
@@ -249,6 +263,7 @@ Mais si t'as 25 services t'as 25 ports a retenir, super chiant. C'est la où on 
 Le Load balancer: récupère une adresse IP public pour mettre en ligne notre projet
 
 ==== namespace
+
 S'amuser avec Kubectl pratique quand on commence avec Kubernetes pour comprendre. C'est ligne de commande qui nous permet de communiquer avec le kubeapi
 La syntaxe est simple: Kubectl verbe objet. 
 
@@ -263,7 +278,8 @@ On modifie une ressource, on transmet la commande au controller et celui ci l'ap
 
 Autoscale, si on demande à un cluster plus de resources qu'il n'en a, notre stagiaire va automatiquement commander des ressources.
 
-=== Health Prove
+=== Health Probe
+
 Si on fait une requête au pod avant qu'il soit démarré erreur => readiness probes, vérifie que le le pod est up, si il retourne pas de 200 on retente dans x seconde.
 
 
@@ -279,6 +295,7 @@ Si on doit vraiment stocker des données dans Kubernetes il faut créer un volum
 Il faut que le persistant volume create puisse claim Un bout de disque dur quelques part
 
 === NIX 
+
 nix langage immmutable, utilisant le package manager appelé nix
 nix-repl permets d'ecrire du code
 
@@ -393,9 +410,11 @@ Donc l'Ia pourrait peut être simplement enlever encore quelque % pour nous perm
 === comment choisir une bdd
 
 ==== les db's relationnelles.
+
 Data stockées dans des tables, celles ci ont reste relatoions entre elles, des jointures (exs Pgsql, Oracle...)
 
 ==== les db's  dockments
+
 Les donnees sont stockées sous forme de docs, format json (ex mongoDB)
 
 ==== les db search
@@ -407,13 +426,19 @@ Beaucoup beaucoup trop de type de bdd comment choisir ?
 Quelques axes de decisions.
 
 === comprendre son besoin
+
 ==== les types de requêtes
+
 ===== requête par id
+
 Requête par identifiant, l'id peut faire le lien entre les tables, impacter l'agencement de kos données etc... 
 Ca rend plus difficile de chercher sur les champs secondaire (photo) 
 L'ajout d'un index peut être pratique si les donnes bouges pas constamment 
+
 ====== requête de recherche et recherche par score
+
 Photos
+
 ==== transactions
 
 Deux éléments a pendre en compte 
@@ -423,14 +448,22 @@ Niveau d'isolation
 Les bases de données relationnelles sont généralement reine 
 
 ==== les résultats 
+
 Est ce que je vais retourner toute la bdd ? Le faire sur 50 pages ? 
+
 ==== insertion et modification 
+
 Taile des donnés, fréquences
+
 ==== suppressions et expiration 
+
 Expiration automatique et coût de suppressions important car RGPD
 Dépend totalement de l' implémentation 
+
 ==== langage de requêtes et drivers
+
 ==== structure 
+
 Struct fixe:on connaît la donnée on peut a valider facilement - > relatilnnel
 Struct flexible on a pas la main sur ce qui nous seras envoyé-> key value
 (photo) 
@@ -438,6 +471,7 @@ Struct flexible on a pas la main sur ce qui nous seras envoyé-> key value
 Sparsedate et column est optimisé pour gérer les valeures null
 
 ==== Contrainte d'intégrité 
+
 ==== contrainte de type
 
 
@@ -446,6 +480,7 @@ Sparsedate et column est optimisé pour gérer les valeures null
 Si la donnes est vouée à changer plutôt taper sur du relationnelle. 
 
 === volume de données. 
+
 Volume faible<1go, bdd in memory 
 Volume colossal
 
