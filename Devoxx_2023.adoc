@@ -474,3 +474,32 @@ Podman est daemonless et rootless
 Webasembly(WASM) dans l'idée faire tourner autre chose que du Javascript
 
 Grosse nouveauté Docker va intégrer wasm
+
+
+=== Du bonheur dans le craft
+Tout comme les artisans en tant que dev on a plein plein d'outils à notre disposition pour répondre à des besoins différents
+Au delà des outils il peut aussi y avoir des soucis de méthode, de communication, de prise en compte des besoins non fonctionnel, du contexte.
+
+Donc 3aspects à prendre en compte:
+Outillage, le bkn outils pour le bon besoin 
+Architecture, les bonnes techniques et partterrn 
+Nature, la prise en compte de l'écosystème 
+
+
+Outillage: bootstrap (angular, vue, spring..), environnements (ide), solution(pgsql tomcat..) hosting (opensjift, azure AWS..)
+
+Architecture :découplage (hexahonal, clean archi..)
+Pattern strategique (business domain, bounded context...)
+Paterne tactique (rich domain...)
+Vocabulair
+
+Nature 
+
+Quand en artisanat on a besoin de faire une table in appelle pas un expert cscien' ' circulaire, on cherche un un menuisier et on part du principe qu'il maîtrise un peu tojt
+
+Alors pourquoi en tant que dev in se présente comme expert angular, ou un expert
+
+Architecture hexagolnal
+
+
+Ar
