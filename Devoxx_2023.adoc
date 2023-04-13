@@ -427,3 +427,18 @@ Les db's relationnels(photos)
 Utiliser les bdd existantes
 Généralistes vs spécifique. Pas mettre toute les données dans la même bdd mais l'adapter au besoin
 Tester régulièrement les perfis 
+
+=== Journal de devoloppeur
+A quel besoin répond le journal que je commence ?
+Suivre ma carrière, capitaliser mes connaissances ?
+C'est quoi un journal ? Une date + une trace
+
+Traces informatives: infos sur le projets, les technos, les collègues, les succès ou difficultés.
+Utiliser des indicateurs smart
+
+Traces techniques :
+choisir une techno dire tous les points positifs et négatifs (place d'expert)
+Tracer les bugs, les choix d'implem pour retrouver pourquoi j'ai implementer un truc comme ça 6mois plus tard.
+
+Sécurité, ne pas laisser traîner les notes que ce soit pour la secu projet ou même juste pour pas filé des infos persos à tous ceux qui passent
+Fine tuning revenir régulièrement sur les précédentes entry à 1jour 1semaine et 1mois afin de savoir ce qu'k' peut améliorer dans notre capitalisation
