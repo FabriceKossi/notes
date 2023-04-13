@@ -284,6 +284,8 @@ nix-repl permets d'ecrire du code
 
 Unfichier nix n'a qu'un seul operateur. Si on veut faire plusieurs chose dans un fichier nix on va utiliser l'operateur let va nous permettre d edeclarer plus de choses:
 
+[source,nix]
+----
 let
     a=1;
     b=1;
@@ -314,7 +316,7 @@ in
         }
     }
 
-
+----
 
 un shell nix peut etre pur ou impur. Un shell est pur si il n'y a rien d'importé 
 pkgs= import <nixpkgs> {};
