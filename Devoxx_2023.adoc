@@ -694,3 +694,42 @@ workspace{
     
     Les diagramme c'est bon juste pour le court terme!!! Privilégié le modele quand on arrive à des trucs plus définitifs
     beaucoup de resources de Simon Brown - the lost art of SoftwareDesign
+
+== VENDREDI
+
+=== clean as you code
+
+Aujourd'hui le code source est partout, c'est devenu le cœur des entreprises d'où l'importance qu'il soit propre.
+Clean code c'est quoi?
+
+D'abord de quel type de code on parle quand on parle de clean code?
+Code principal, le code support, code tiers (librairies) code non conventionnel (jupiter book par exemple)
+
+*Clean code taxinomy* en avant premiere, nouvelle philo sonar(photo) 
+
+Un code clair adapté à un but:
+Clair (pas mille et un if imbriqué)
+Cohérent (code adapté aux bonnes pratiques)
+Structuré
+
+Le pouvoir du clean code
+Minimise l'effort d'entretien, réduit les friction pour les développeurs, augmente la longévité du code, améliore la secu. 
+
+Pourquoi tout le monde ne fait pas du clean du code? 
+Tous les devs ne sont pas au même niveaux et les langages sont vivant ce qui est du clean code aujourd'hui ne le sera pas forcément demain. 
+Ca prend du temps et personne n'a envie de se plonger dans un code d'il y a 10ans pour le mettre au propre surtout si il marche. 
+
+
+=== L'approche clean code
+
+ Option1: repartir de 9,faire une appli Iso mais propre. Pas conseillé !
+Option 2 refactoring : est ce qu'on va vraiment faire un truc de meilleur qualité sans introduire de nouveau problème ? Pas recommandé non plus
+Option 3 clean as you code basé sur le *nouveau code*! L'idée est d'arrêter d'introduire de nouvelles erreurs. On fait de la qualité au fil de l' eau. Corriger les problèmes à la source
+Ça responsabilise le développeur et lui donne des tips et bonnes pratiques
+
+=== implementer le clean code
+
+Sonarlint pour avoir les explications des erreurs direct dans l'IDe, en plus avec sonarqube on a la quality gate qui nous assure que ce qu'on va push est propre.
+
+On estime à 20 % la quantité de code reecrit chaque année.
+Donc finalement écrire du code propre au fur et à mesure va tout naturellement nettoyé l'existant.
