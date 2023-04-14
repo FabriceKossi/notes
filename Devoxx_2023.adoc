@@ -720,16 +720,17 @@ Tous les devs ne sont pas au même niveaux et les langages sont vivant ce qui es
 Ca prend du temps et personne n'a envie de se plonger dans un code d'il y a 10ans pour le mettre au propre surtout si il marche. 
 
 
-=== L'approche clean code
+==== L'approche clean code
 
  Option1: repartir de 9,faire une appli Iso mais propre. Pas conseillé !
 Option 2 refactoring : est ce qu'on va vraiment faire un truc de meilleur qualité sans introduire de nouveau problème ? Pas recommandé non plus
 Option 3 clean as you code basé sur le *nouveau code*! L'idée est d'arrêter d'introduire de nouvelles erreurs. On fait de la qualité au fil de l' eau. Corriger les problèmes à la source
 Ça responsabilise le développeur et lui donne des tips et bonnes pratiques
 
-=== implementer le clean code
+==== implementer le clean code
 
 Sonarlint pour avoir les explications des erreurs direct dans l'IDe, en plus avec sonarqube on a la quality gate qui nous assure que ce qu'on va push est propre.
 
 On estime à 20 % la quantité de code reecrit chaque année.
 Donc finalement écrire du code propre au fur et à mesure va tout naturellement nettoyé l'existant.
+
