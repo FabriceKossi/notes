@@ -734,3 +734,18 @@ Sonarlint pour avoir les explications des erreurs direct dans l'IDe, en plus ave
 On estime à 20 % la quantité de code reecrit chaque année.
 Donc finalement écrire du code propre au fur et à mesure va tout naturellement nettoyé l'existant.
 
+=== Logiciels espion
+
+La quantité de données récupéree par le renseignement augmente de manière exponentielle dans le monde militaire. Ça va de manière exponentielle.
+Il en va de même dans le monde du commerce, entre les signaux radio, infra rouge, optique ou de réseau sociaux c'est un tsunami qui arrive.
+Y a juste pas le nombre de bras nécessaire pour traiter tout ça. L'Ia va être indispensable.
+
+Où sont ranger les logiciels d'ia classiquement ?-> DATACENTER
+Des infrastructures et des outils efficaces et testés sont à la main des data engineer classique.
+
+Dans le cadre d'une mission défense et sécurité c'est pas faisable.
+Ca peut être des environnements hostiles, ou coupé de tout et même d'internet ou sur un porte avions par exemples.
+
+
+Donc liste de problèmes:
+Pas accès aux données du client, pas d'accès au hardware, peu d'accès aux utilisateurs finaux, pas d'accès au modèle une fois celui ci déployé. 
