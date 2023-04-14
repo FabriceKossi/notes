@@ -811,4 +811,93 @@ On observe ces dernières années une inflation des expertises de datasciencient
 C'est qui les MLE: 
 Phto
 
+=== Voyage au centre de la veille 
+
+Dans certaine boîte y a des personnes/services dédié à la veille qui vont faire de la veille stratégique pour filer les infos aux décideurs. 
+
+Sinon veille personnelle et c'est de ça dont je parle. 
+
+Image du bûcheron. Y a un bûcheron qui tape tape sur des arbres  et se fatigue
+
+La veille est le temps. Investi pour améliorer nos compétences 
+
+Process en 3 étapes :sourcer-> traiter - > Valoriser
+
+==== Sourcer
+Tweetdeck /mastodon deux outils pour suivre des tags et des personnes
+
+Outils pour stocker tout ca
+
+Risque d'accumulation et d'être submergé par tous les élément qu'on ajouté. Donc être sélectif dans ce qu'on ajouté dans sa liste. C'est autant de temps qu'il faudra y consacrer 
+
+==== Traiter
+Prendre des notes: tout ce qui occupe notre mémoire réduit. Kotre capacité à penser. Déplus si on fait rien on oublie très vite. Enfin ça améliore notre réflexion. 
+
+Ne pas prendre de note = perdre son temps. 
+
+Le plus important est de paraphraser plutôt que de copier. C'est comme. Si on s'expliquait a nous même. Si on arrive pas à reformuler avec ses mots c'est probablement qu'on a pas compris. 
+On est pas là pour tout noter juste ce qui paraît important. 
+
+Qui utilises ses notes ? On est beaucoup à écrire des notes qu'on ne relis jamais. 
+Première possibilité:tout classer (photo) limitation dure à scaler 
+2eme possibilité: ZETTELKASTEN:
+
+Prendre ses notes de lecture et les redecouper en petite notes. Le faire vite sinon on oublie. C'est la. Phase d'élaboration. Où on réfléchi prend de la hauteur, fait des lien entre nós notes. 
+Notss atomiques. Une note une idée. On essaie d'ehier
+Logiciel Obsidian. 
+
+Utllilisation de tags
+Notes de structures 
+Notes app. Info permets de comparer les app. 
+
+Ne pas se casser la tête le systeme doit être une aide pas une perte d'énergie. 
+
+
+==== Valoriser sa veille 
+
+Pour @sebrose la valeur est tout ce qui permet d'apporter de la connaissance, réduire. Les risques et avoir du feedback positif. 
+
+- Apprendre: a des conséquences positives à moyen et long terme 
+- Innover: 
+- Expérimenter
+-Partager:La connaissance est la seule chose qui grandit quand on la partage
+Tres important de discuter avec les collègues pour partager de la Connaissance. 
+Discuter et partager notre veille conduit à l'innovation. 
+
+Produire des trucs:article, podcast videos, images permets d'avoir du feedback et est un exercice super intéressant. 
+Le meilleur moyen d'apprendre est d'enseigner. Donc se. Mettre dans une posture d'assimiler des sujets et
+
+Ateliers 
+GoodMorningLearning
+Xtrem reading 
+MOB programming 
+
+Soucis ça prend de l'énergie et du temps tout ca. 
+Veille passive y a des jours où on a pas '' envie et pas d'énergie. On subit l'info mais on l'engrange
+
+Éviter de s'epuiser: habitude. 
+
+1. SIGNAL 
+2 BESOIN 
+3 ACTIO'
+4 RÉCOMPENSE 
+
+Boucle de l'habitude 
+
+Il faut rendre le signe évident 
+Rendre le besoin attractif 
+Rendre l'action facile
+Rendre la récompense plaisante 
+
+The atomic habit
+
+Quel temps pour la veille ? 
+
+Est ce qu'on le mets sur du temps solo ou entreprise ? 
+
+
+
+
+
+
 
