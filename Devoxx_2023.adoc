@@ -749,3 +749,66 @@ Ca peut être des environnements hostiles, ou coupé de tout et même d'internet
 
 Donc liste de problèmes:
 Pas accès aux données du client, pas d'accès au hardware, peu d'accès aux utilisateurs finaux, pas d'accès au modèle une fois celui ci déployé. 
+
+=== théorème de Bayes
+Exemple Inception Photo
+
+Homo apriorus
+Basé uniquement sur les croyances 
+Seul les croyances sont pris en compte en ignorant les fait
+
+Homo pragmaticus
+Que les fait sans les croyance. Il capable de voir les choses de manières abstraite
+
+Homo contrmplatus
+Croyance et fait mais totalement independente
+
+Homo frequenticu
+Fait à l'aune des croyance
+
+Homo bayesie
+Croyances a l'aune des fait 
+
+Théorème de bayes
+Photod
+
+
+Ce que sous entend ce théorème est que la croyance à posteriori est amélioré par rapport à la croyance à priori à l'aide de l'observation 
+Ont peut calculer la probabilités de quelques choses qu'on ne peut pas observer
+
+Laplace a redecouvert le theoreme de manière indépendante. Et mets en place ça version moderne avec le principe d'indifférence. 
+C'est à dire que si on a pas d'info sur des éléments et bah toute on la même proba
+
+Fisher biologiste et mathématicien. A mis en place tout le paradigme fréquentiste, en bio notamment. 
+
+Exemple avec un lancer de pièce 
+
+En mode fréquentiste on fait 100 lancés on choppe la moyenne 
+En mode bayesien on applique la formule. 
+(photo) 
+
+On voit qu'après 100 lancé les deux théorèmes arrivent au même résultats 
+Donc on voit bien qu'avec beaucoup de données on a les même result
+La différence est qu'au tout début quand y a peu de lancé le théorème de Bayes a bien moins variance que les résultats fréquentiste. 
+Donc thedoreme de Bayes super efficace si on a peu d'observation
+
+Theoreme de bayes plus ou moins enterré. 
+
+Redecouvert durant la 2nd guerre mondiale utilisé notamment par Turing dans la decryption de message allemand. 
+
+Les anglais font en sorte de ne pas trop ébruité le fait que Bayes soit utile en dehors de l'armée. 
+
+Mais redecouvert également dans le civil. Par exemple Jérôme Cornfield quand il a cherché à déterminé le lien entre être fumeur et avoir un cancer
+
+
+=== Où va la data science ? 
+
+==== Qu'est ce que la data science ? 
+Celui qui produit le code nécessaire à la transformation du code en model
+Le data scientist prédit le data analyste observe
+On observe ces dernières années une inflation des expertises de datasciencientist a qui on file de plus en plus 
+
+C'est qui les MLE: 
+Phto
+
+
